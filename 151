@@ -1,0 +1,12 @@
+#151 reverse words in a string
+class Solution {
+    public String reverseWords(String s) {
+        String[] arr=s.trim().split("\\s+");
+        for(int word=0;word<arr.length/2;word++){
+            String temp=arr[word];
+            arr[word]=arr[arr.length-word-1];
+            arr[arr.length-word-1]=temp;
+        }
+        return String.join(" ",arr);
+    }
+}
